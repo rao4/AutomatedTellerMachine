@@ -26,5 +26,21 @@ namespace AutomatedTellerMachine.Controllers
 
             return View();
         }
+
+        public ActionResult Foo()
+        {
+            return View("About");
+        }
+
+        public ActionResult Serial(string letterCase)
+        {
+            var serial = "ASPMVC5SERIAL1";
+            if (letterCase == "lower")
+            {
+                Content(serial.ToLower());
+            }
+            //return Content(serial);
+            return Json(new { name = "serial", value = serial }, JsonRequestBehavior.AllowGet);
+        }
     }
 }
