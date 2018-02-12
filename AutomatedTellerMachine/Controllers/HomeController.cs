@@ -46,10 +46,10 @@ namespace AutomatedTellerMachine.Controllers
             var serial = "ASPMVC5SERIAL1";
             if (letterCase == "lower")
             {
-                Content(serial.ToLower());
+                return Content(serial.ToLower());
             }
-            //return Content(serial);
-            return Json(new { name = "serial", value = serial }, JsonRequestBehavior.AllowGet);
+            return Content(serial);
+            //return Json(new { name = "serial", value = serial }, JsonRequestBehavior.AllowGet);
         }
     }
 }
