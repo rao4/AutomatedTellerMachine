@@ -25,7 +25,13 @@ namespace AutomatedTellerMachine
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/font-awesome.css",
                       "~/Content/site.css"));
+
+            // Set EnableOptimizations to fasle for debugging. for more information, 
+            // Visit http://go.microsoft.com/fwlink/?LinkId=301862
+            BundleTable.EnableOptimizations = false;
+            bundles.UseCdn = true;
         }
     }
 }
